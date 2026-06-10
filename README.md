@@ -71,16 +71,6 @@ This starts all five containers:
 | PostgreSQL | `localhost:5432` |
 | Redis | `localhost:6379` |
 
-### Verify
-
-```bash
-# Health check — ML service
-curl http://localhost:8000/health
-
-# Send test transactions through the full pipeline
-pip install websockets confluent-kafka
-python test_fraud_detection.py
-```
 
 ## Project Structure
 
@@ -177,26 +167,9 @@ All operations run inside a `@Transactional` boundary for atomicity.
 | `MODEL_PATH` | `app/models/fraud_model.onnx` | Path to ONNX model file |
 | `APP_ENV` | `production` | Environment flag |
 
-### Java Ledger
 
-| Variable | Default | Description |
-|---|---|---|
-| `SPRING_DATASOURCE_URL` | — | JDBC connection string |
-| `SPRING_DATASOURCE_USERNAME` | — | PostgreSQL username |
-| `SPRING_DATASOURCE_PASSWORD` | — | PostgreSQL password |
-| `SPRING_KAFKA_BOOTSTRAP_SERVERS` | — | Kafka broker address |
 
-## Testing
 
-```bash
-# Basic WebSocket + Kafka producer verification
-python testScripts.py
-
-# Full end-to-end fraud detection pipeline test
-python test_fraud_detection.py
-```
-
-The `test_fraud_detection.py` script sends transactions of varying amounts, waits for the ML service to score them, and compares fraud scores across normal and suspicious transactions.
 
 ## Tech Stack
 
