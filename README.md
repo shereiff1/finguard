@@ -110,9 +110,6 @@ finguard/
 │   │   └── service/            # LedgerService (transfers), FraudHandlerService (freeze)
 │   ├── Dockerfile
 │   └── pom.xml
-│
-├── testScripts.py              # Basic WebSocket + Kafka verification
-└── test_fraud_detection.py     # End-to-end fraud pipeline verification
 ```
 
 ## How It Works
