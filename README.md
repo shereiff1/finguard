@@ -162,18 +162,7 @@ All operations run inside a `@Transactional` boundary for atomicity.
 | `KAFKA_BOOTSTRAP_SERVERS` | `kafka:29092` | Kafka broker address |
 | `REDIS_URL` | `redis://redis:6379` | Redis connection URL |
 | `MODEL_PATH` | `app/models/fraud_model.onnx` | Path to ONNX model file |
-| `APP_ENV` | `production` | Environment flag |
 
 
 
 
-
-## Tech Stack
-
-- **Go 1.25** — High-throughput ingestion gateway
-- **Python 3.11** — ML inference with FastAPI & ONNX Runtime
-- **Java 21** — Transactional ledger with Spring Boot 3.2
-- **Apache Kafka** (KRaft mode) — Event streaming
-- **PostgreSQL 16** — Persistent storage
-- **Redis 7** — Feature caching
-- **Docker Compose** — Local orchestration
